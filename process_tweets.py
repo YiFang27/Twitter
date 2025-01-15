@@ -2,7 +2,7 @@
 import pandas as pd
 import json 
 
-tweets_file = "tweets.json"
+tweets_file = "C:/Users/fy199/Twitter/tweets.json"
 data = []
 
 # Read JSON lines and convert to DataFrame
