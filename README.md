@@ -26,11 +26,13 @@ Automatically monitors the script and restarts fetch_tweets.py if it stops runni
         │── README.md              # Project documentation
 ## Setup Instructions
 ### 1. Clone the Repository
-        git clone https://github.com/YiFang27/Twitter.git
-        cd Twitter
+```bash
+git clone https://github.com/YiFang27/Twitter.git
+cd Twitter
 ### 2. Install Dependencies
 #### Ensure you have Python 3.12+ installed. Then install the required libraries:
-        pip install -r requirements.txt
+```bash
+pip install -r requirements.txt
 ### 3. Set Up Twitter API Credentials
 Register a Twitter Developer account.   
 Obtain **Bearer Token** from Twitter Developer Portal.   
@@ -39,9 +41,11 @@ Replace BEARER_TOKEN in fetch_tweets.py with your actual token.
 Create a Google Cloud project and enable BigQuery & Cloud Storage.    
 Download the service account JSON key.    
 Set up the environment variable:
-        export GOOGLE_APPLICATION_CREDENTIALS="path/to/your-service-key.json"
+```bash
+export GOOGLE_APPLICATION_CREDENTIALS="path/to/your-service-key.json"
 On Windows (PowerShell):
-        $env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\your-path\your-service-key.json"
+```bash
+$env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\your-path\your-service-key.json"
 ### 5. Run the Pipeline
 Manually run the script     
 To manually fetch and process tweets:
