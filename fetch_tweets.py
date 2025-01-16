@@ -29,7 +29,8 @@ def fetch_tweets():
             query=query,
             max_results=10,  # Fetch up to 10 tweets
             tweet_fields=["created_at", "text", "author_id"],
-            since_id=last_tweet_id,  # Fetch only tweets after the last fetched tweet
+            expansions=["author_id"],
+            since_id=last_tweet_id, # Fetch only tweets after the last fetched tweet
         )
 
         # Check if tweets are found
@@ -62,7 +63,7 @@ def fetch_tweets():
         print(f"An error occurred: {e}")
 
 
-# Refresh every 20 mins
+# Refresh every 60 mins
 while True:
     print("Fetching new tweets...")
     fetch_tweets()  # Run the fetch_tweets function directly
@@ -70,6 +71,8 @@ while True:
     # Optionally process tweets here
     os.system("python process_tweets.py")
 
-    # Sleep for 20 minutes
-    print("Waiting for 20 minutes...")
-    time.sleep(20 * 60)
+    # Sleep for 60 minutes
+    print("Waiting for 60 minutes...")
+    time.sleep(60 * 60)
+
+
