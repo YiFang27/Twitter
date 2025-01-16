@@ -3,10 +3,14 @@
 This project automates the process of fetching tweets from Twitter using the Twitter API, storing them in Google Cloud Storage (GCS), and loading them into BigQuery for further analysis. The pipeline ensures incremental data fetching, avoiding duplicates while allowing real-time updates.
 
 ## Features
-Fetches tweets every 20 minutes using Twitter API v2.      
-Stores tweet data in tweets.json and converts it to tweets.csv.      
-Uploads tweets.csv to Google Cloud Storage.         
-Loads data into Google BigQuery while avoiding duplicate entries           
+Fetches tweets every 20 minutes using Twitter API v2.   
+
+Stores tweet data in tweets.json and converts it to tweets.csv.  
+
+Uploads tweets.csv to Google Cloud Storage.  
+     
+Loads data into Google BigQuery while avoiding duplicate entries.     
+
 Automatically monitors the script and restarts fetch_tweets.py if it stops running.        
 
 ## Project Structure 
