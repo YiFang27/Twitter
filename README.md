@@ -38,17 +38,17 @@ Replace BEARER_TOKEN in fetch_tweets.py with your actual token.
 ### 4. Set Up Google Cloud Credentials
 Create a Google Cloud project and enable BigQuery & Cloud Storage.    
 Download the service account JSON key.    
-Set up the environment variable:     
+Set up the environment variable:
         export GOOGLE_APPLICATION_CREDENTIALS="path/to/your-service-key.json"
-On Windows (PowerShell):     
+On Windows (PowerShell):
         $env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\your-path\your-service-key.json"
 ### 5. Run the Pipeline
 Manually run the script     
-To manually fetch and process tweets:     
+To manually fetch and process tweets:
         python fetch_tweets.py
         python process_tweets.py
-Automate with Monitor Script     
-To automatically check and restart the fetch script:        
+Automate with Monitor Script 
+To automatically check and restart the fetch script:
         python monitor.py
 This ensures fetch_tweets.py runs continuously, restarting if needed.     
 
