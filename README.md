@@ -28,25 +28,25 @@
 #### Ensure you have Python 3.12+ installed. Then install the required libraries:
         pip install -r requirements.txt
 ### 3. Set Up Twitter API Credentials
-        Register a Twitter Developer account.
-        Obtain Bearer Token from Twitter Developer Portal.
-        Replace BEARER_TOKEN in fetch_tweets.py with your actual token.
+    Register a Twitter Developer account.
+    Obtain **Bearer Token** from Twitter Developer Portal.
+    Replace BEARER_TOKEN in fetch_tweets.py with your actual token.
 ### 4. Set Up Google Cloud Credentials
-        Create a Google Cloud project and enable BigQuery & Cloud Storage.
-        Download the service account JSON key.
-        Set up the environment variable:
+    Create a Google Cloud project and enable BigQuery & Cloud Storage.
+    Download the service account JSON key.
+    Set up the environment variable:
         export GOOGLE_APPLICATION_CREDENTIALS="path/to/your-service-key.json"
-        On Windows (PowerShell):
+    On Windows (PowerShell):
         $env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\your-path\your-service-key.json"
 ### 5. Run the Pipeline
-        Manually run the script
-        To manually fetch and process tweets:
+    Manually run the script
+    To manually fetch and process tweets:
         python fetch_tweets.py
         python process_tweets.py
-        Automate with Monitor Script
-        To automatically check and restart the fetch script:        
+    Automate with Monitor Script
+    To automatically check and restart the fetch script:        
         python monitor.py
-        This ensures fetch_tweets.py runs continuously, restarting if needed.
+    This ensures fetch_tweets.py runs continuously, restarting if needed.
 
 ## How It Works
 ### Fetching Tweets (fetch_tweets.py)
@@ -63,18 +63,21 @@
     Restarts the script if it is not running.
     Ensures continuous tweet fetching.
 ## Troubleshooting
-Common Errors & Fixes
-Error	Cause	Solution
-Rate limit reached	Twitter API limit exceeded	Reduce max_results or increase time between requests.
-Duplicate tweets in BigQuery	since_id not updating correctly	Ensure last_tweet_id.txt is updated after each fetch.
-tweets.csv not updating	Script not running	Check logs or manually run process_tweets.py.
-GOOGLE_APPLICATION_CREDENTIALS not found	Env variable not set	Set it using export or $env: commands.
+### Common Errors & Fixes
+
+| **Error**                          | **Cause**                          | **Solution**                                         |
+|------------------------------------|------------------------------------|------------------------------------------------------|
+| **Rate limit reached**             | Twitter API limit exceeded         | Reduce `max_results` or increase time between requests. |
+| **Duplicate tweets in BigQuery**   | `since_id` not updating correctly  | Ensure `last_tweet_id.txt` is updated after each fetch. |
+| **tweets.csv not updating**        | Script not running                 | Check logs or manually run `process_tweets.py`. |
+| **GOOGLE_APPLICATION_CREDENTIALS not found** | Env variable not set            | Set it using `export` or `$env:` commands. |
+
 ## Future Improvements
-Integrate with Google Cloud Functions for serverless automation.
-Implement Stream Processing with Pub/Sub for real-time updates.
-Improve data cleaning and enrichment (e.g., sentiment analysis, topic modeling).
+### Integrate with Google Cloud Functions for serverless automation.
+### Implement Stream Processing with Pub/Sub for real-time updates.
+### Improve data cleaning and enrichment (e.g., sentiment analysis, topic modeling).
 ## License
-This project is licensed under the MIT License.
+### This project is licensed under the MIT License.
 
 ## Contributors
 Yi Fang – Developer & Data Engineer
