@@ -29,10 +29,12 @@ Automatically monitors the script and restarts fetch_tweets.py if it stops runni
 ```bash
 git clone https://github.com/YiFang27/Twitter.git
 cd Twitter
+```
 ### 2. Install Dependencies
 #### Ensure you have Python 3.12+ installed. Then install the required libraries:
 ```bash
 pip install -r requirements.txt
+```
 ### 3. Set Up Twitter API Credentials
 Register a Twitter Developer account.   
 Obtain **Bearer Token** from Twitter Developer Portal.   
@@ -43,23 +45,29 @@ Download the service account JSON key.
 Set up the environment variable:
 ```bash
 export GOOGLE_APPLICATION_CREDENTIALS="path/to/your-service-key.json"
+```
 On Windows (PowerShell):
 ```bash
 $env:GOOGLE_APPLICATION_CREDENTIALS="C:\Users\your-path\your-service-key.json"
+```
 ### 5. Run the Pipeline
-Manually run the script     
+#### Manually run the script     
 To manually fetch and process tweets:
-        python fetch_tweets.py
-        python process_tweets.py
-Automate with Monitor Script 
+```bash
+python fetch_tweets.py
+python process_tweets.py
+```
+#### Automate with Monitor Script 
 To automatically check and restart the fetch script:
-        python monitor.py
-This ensures fetch_tweets.py runs continuously, restarting if needed.     
+```bash
+python monitor.py
+```
+#### This ensures fetch_tweets.py runs continuously, restarting if needed.     
 
 ## How It Works
 ### Fetching Tweets (fetch_tweets.py)
 Queries Twitter API v2 for new tweets matching a keyword.     
-Uses **since_id** to fetch only new tweets since the last run.     
+Uses `since_id` to fetch only new tweets since the last run.     
 Saves results to tweets.json.     
 ### Processing Tweets (process_tweets.py)
 Reads tweets.json, removes duplicates, and cleans data.     
