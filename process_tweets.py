@@ -29,7 +29,6 @@ df.to_csv("tweets.csv", index=False, quoting=1)  # quoting=1 uses `csv.QUOTE_NON
 
 # Upload csv to buket
 from google.cloud import storage
-import pandas as pd
 
 # Initialize the GCS client
 client = storage.Client()
